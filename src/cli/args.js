@@ -1,5 +1,5 @@
 const parseArgs = () => {
-  const args = process.argv.slice(2);
+  const args = process.argv;
 
   const indexes = args
     .map((item, index) => {
@@ -8,9 +8,11 @@ const parseArgs = () => {
       }
     })
     .filter((index) => index);
-    
-    const resultArr = indexes.map((index) => `${args[index].slice(2)} is ${args[index + 1]}`);
-    console.log(resultArr.join(', '));
+
+  const resultArr = indexes.map(
+    (index) => `${args[index].slice(2)} is ${args[index + 1]}`
+  );
+  console.log(resultArr.join(", "));
 };
 
 parseArgs();
